@@ -29,8 +29,13 @@ class Person():
 
     def fdelA(self):
         pass
-    name = property(fget, fset, fdel)
-    age = property(fgetA, fsetA, fdelA)
+    # property的四个参数是固定的
+    # 第一个代表读取
+    # 第二个代表设置
+    # 第三个代表删除
+    # 第四个是文档说明
+    name = property(fget, fset, fdel, '文档说明name')
+    age = property(fgetA, fsetA, fdelA, '文档说明age')
 p = Person()
 p.name = 'ljy'
 p.age = 22.3
