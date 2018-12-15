@@ -10,20 +10,29 @@ class Person():
     将name全部转成大写
     将age全部取整
     '''
-    def fset(self, name, age):
-        self._name = name.upper()
-        self._age= int(age)
-    def fdel(self):
-        self._name = 'NoName'
-        self._age = 0
+
     def fget(self):
+        return self._name
+
+    def fset(self, name):
+        self._name = name.upper()
+
+    def fdel(self):
         pass
 
+
+    def fgetA(self):
+        return self._age
+
+    def fsetA(self, age):
+        self._age = int(age)
+
+    def fdelA(self):
+        pass
     name = property(fget, fset, fdel)
-    age = property(fget, fset, fdel)
+    age = property(fgetA, fsetA, fdelA)
 p = Person()
-p.name = 'ljy '
-p.age = '22.3'
+p.name = 'ljy'
+p.age = 22.3
 print(p.name)
 print(p.age)
-print(int(22.3))
